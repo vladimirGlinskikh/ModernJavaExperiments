@@ -3,10 +3,10 @@ package kz.zhelezyaka.findTwoEvenNumbers;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class FindTwoEvenNumbers {
     public static void main(String[] args) {
-        List<Integer> findTwoEvenNumbers = Arrays.asList(-109, -1, 10, 15, 18, 109);
-        System.out.println(filterNumbers(findTwoEvenNumbers, new NumbersEven()));
+        List<Integer> lists = Arrays.asList(2, 5, 10);
+        System.out.println(filterNumbers(lists, new NumbersEven()));
     }
 
     public static boolean filterNumbers(List<Integer> inventory, NumberPredicate predicate) {
@@ -21,6 +21,7 @@ public class Main {
 
     public static class NumbersEven implements NumberPredicate {
         int count;
+
         @Override
         public boolean test(Integer integer) {
             if (integer % 2 == 0) {
@@ -30,7 +31,7 @@ public class Main {
         }
     }
 
-    public interface NumberPredicate{
+    public interface NumberPredicate {
         boolean test(Integer integer);
     }
 }
